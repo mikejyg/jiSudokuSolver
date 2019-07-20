@@ -1,0 +1,76 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+  <b>Definitions</b><br>
+  <br>
+  <b>cell set</b>: is each of the row, column and the 9-cell square of the Sudoku puzzle.<br>
+  <br>
+  <b>candidate</b>: is a possible value a cell can have, when the value of the cell is not know.<br>
+  <br>
+  <b>candidate list</b>: is the list of candidates of a cell, when the value of the cell is not know.<br>
+  <br>
+  <br>
+  <b>Solve Methods</b><br>
+  <br>
+  level 1: Eliminate candidate, with single candidate conversion<br>
+    For each known cell, eliminate candidates of other cells within the same set, and convert cells with a single candidate as known.<br>
+<br>
+  level 2: Single Destination<br>
+	Within a cell set, if a candidate has only one destination, then the destination cell must be the candidate.<br>
+<br>
+  level 3: Limited candidates<br>
+	If 2 cells of a cell set contain only 2 candidates in all, 
+	then these candidates can not appear in other cells within the same set. Same applies to 3 cells also.<br>
+<br>
+  level 4: Limited destination<br>
+    If, within a cell set, a candidate only appear in 2 cells, then all other sets that contain these 2 cells 
+    can not have that candidate in all other cells. This can be generalized to 3 cells also<br>
+<br>
+  level 5: Dual line limited destination<br>
+    For any 2 square sets on a common row, if a candidate only appear on 2 common rows of the 2 sets,
+    then on the 3rd square set on the common row, the candidate can be eliminated from the 2 common rows.<br>
+    Same applies to columns.<br>
+<br>
+  level 6: X-wing pattern<br>
+	If there are two rows, where a candidate appears and only appears in the same 2 columns (the 4 cells form a rectangle), 
+	then we can be sure that the candidate appear in both columns at the one of the two rows.
+	As a result, we can remove the candidate from other cells (excluding the intersections with the two rows) 
+	of the two columns.<br>
+<br>  
+  level 7: Trial and error (Brute force search)<br>
+    Just as it says.<br>
+<br>
+<br>
+    <b>FAQs</b><br>
+<br>
+    1. How do I play a puzzle?<br>
+      You can play puzzle on the input tab. Just fill in the numbers. Once the puzzle is solved correctly, it will congratulate you. 
+      To fill in or change a cell, just move your mouse over the cell, and it will turn into a text cursor, allowing you to input numbers.
+      If you put 1 number, it will assume the cell is known. If you put multiple numbers, it will assume they are candidates
+      (make sure that View/Show candidates is checked). 
+      Move your mouse away from the cell to complete the input.<br>
+<br>
+<br>
+	<b>Notes</b><br>
+<br>
+	When <i>View candidates</i> is checked, the solver will take into account the candidate lists, 
+	and if the candidate lists are missing candidates, the solver will report unsolvable.
+	This is designed to be a way to check whether your candidate lists are correct or not.<br>
+<br>
+	The <i>Fix a conflict puzzle</i> function may produce a fixed puzzle with multiple solutions. 
+	You can use the solver/Solve afterwards to make it single solution.<br>
+<br>
+	The <i>Instant quick solvability check</i> does not guarantee to detect a unsolvable puzzle. 
+	It is just a "quick check", not a "complete" check.<br>
+<br>
+<br>
+  </body>
+</html>

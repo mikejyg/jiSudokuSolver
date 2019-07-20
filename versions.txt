@@ -1,0 +1,62 @@
+version 2.4.0
+- added a non-greedy solver for better showing the solving process
+
+version 2.3.0
+- added print board function
+- added check solvability function
+- misc cleanups
+- added xwing capability
+- added pattern highlighting
+- added option to enable/disable highlight changes
+
+version 2.2.0
+- added highlight of conflict cells during play.
+- added help and improved documentation.
+- now you can input candidates by a string of numbers.
+- it now remembers window locations.
+- added fix conflict puzzle function.
+- misc bug fixes.
+
+version 2.1.0
+- a lot of GUI improvements.
+- changed so that the GUI cross eliminate only does one level.
+- added assist with instant solvability warning and hint a move.
+- added highlighting of bad play.
+- added random search setting in advanced menu.
+- misc fixes and restored performance.
+
+version 2.0.2
+- do not use reduce after generate, unless targets a specific level.
+- fixed non-random solve when random is set (in solver).
+- added step back/forward for input board tab
+- restricted so that only the input board can be edited
+
+version 2.0.1
+- fixed exception when solving a unsolvable (conflict) puzzle.
+- fixed startGUI.bat, so it works without cygwin.
+
+version 2.0
+- now with GUI (Graphical User Interface), just double click startGUI.bat
+
+version 1.2.1
+- fixed output of -gc
+- added more examples
+- misc performance improvements
+
+version 1.2.0
+- added puzzle generation capability
+- bug fix: CandidateConstraint?Search: java iterator copy does not work, as in c++
+- bug fix: CandidateConstraint?Search: need to check whether cells are set during the operation
+- added capability reading puzzle format on wiki
+- now the newly generated puzzle goes through a reduction process to remove unnecessary values.
+- refined outputs.
+- added reduce function.
+
+version 1.1.0
+- added capability to find and report all solutions.
+- various MISC improvements - does not impact solver algorithm.
+- added the use of log4j.
+- command line argument changes
+
+version 1.0.0
+- 5 logical deduction methods plus DFS brute force search.
